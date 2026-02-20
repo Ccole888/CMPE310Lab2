@@ -4,25 +4,25 @@
 
 
 .section .data 
-    msgOne: .ascii "Foo"
+    msgOne: .ascii "this is a test"
     lenOne = . - msgOne
-    msgTwo: .ascii "Bar"
+    msgTwo: .ascii "of the emergency broadcast"
     lenTwo = . - msgTwo
 
 .section .text
     .global hamDist
 
 hamDist:
-    lea msgOne, %rsi
-    lea msgTwo, %rdi
     xor %rsi, %rsi
     xor %rdi, %rdi
+    movq $0, %r12
+    lea msgOne, %rsi
+    lea msgTwo, %rdi
     movw $lenOne, %ax
     cmpw $lenTwo, %ax
     jl less_than
     lea msgOne, %rsi
     lea msgTwo, %rdi
-    movq $0, %r12
 
     
 greater_than:
