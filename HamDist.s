@@ -4,9 +4,9 @@
 
 
 .section .data 
-    msgOne: .ascii "chicken"
+    msgOne: .ascii "Foo"
     lenOne = . - msgOne
-    msgTwo: .ascii "CHICKEN"
+    msgTwo: .ascii "Bar"
     lenTwo = . - msgTwo
 
 .section .text
